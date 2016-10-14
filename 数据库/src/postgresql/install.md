@@ -31,7 +31,7 @@ initdb -D '/var/lib/postgres/data'
 最后一步也可用 pg_ctl 命令：
 
 ```
-pg_ctl initdb -D /var/lib/postgres/data
+pg_ctl -D /var/lib/postgres/data initdb
 ```
 
 
@@ -81,6 +81,14 @@ kill -INT `head -1 /var/lib/postgres/data/postmaster.pid`
 ```
 
 
+## 开机自启动 postgresql
+
+
+```
+systemctl enable postgresql
+```
+
+
 ## 生成 postgresql 用户及数据库
 
 ```
@@ -100,7 +108,7 @@ createdb testDB
 
 ## postgresql 数据库结构
 
-* cluster: database 的集合，前面 initdb 生成的目录就是一个 postgresql cluster
+* cluster: database 的集合
 * database：schema 的集合
 * schema：table、function 等的集合
 
@@ -143,4 +151,5 @@ host   all   all   my_remote_ip_address/32   md5
 ```
 su - postgres psql
 
+sql> alter role username password 'string';
 ```
