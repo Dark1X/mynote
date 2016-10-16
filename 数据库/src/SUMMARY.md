@@ -3,7 +3,6 @@
 - [postgresql](./postgresql/index.md)
     - [安装](./postgresql/install.md)
     - [用户、组](./postgresql/user-group.md)
-    - [备份、升级](./postgresql/backup.md)
     - [数据库模板](./postgresql/template.md)
 - [mysql](./mysql/index.md)
     - [安装](./mysql/install.md)
