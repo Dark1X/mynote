@@ -10,3 +10,4 @@
     - [堆排序](./heap_sort.md)
 - [分布式哈希算法](./hashring.md)
 - [回文数](./回文数.md)
+- [构造树型结构](./tuple_to_tree.md)

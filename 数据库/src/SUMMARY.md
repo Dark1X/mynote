@@ -4,6 +4,7 @@
     - [安装](./postgresql/install.md)
     - [用户、组](./postgresql/user-group.md)
     - [数据库模板](./postgresql/template.md)
+	- [Idle in transaction](./postgresql/idle-in-transaction.md)
 - [mysql](./mysql/index.md)
     - [安装](./mysql/install.md)
     - [用户、组](./mysql/user-group.md)

@@ -25,7 +25,7 @@ adduser postgres
 mkdir -p /var/lib/postgres/data
 chown -c -R postgres:postgres /var/lib/postgres
 su - postgres
-initdb -D '/var/lib/postgres/data'
+initdb -E UTF8 --locale zh_CN.UTF-8 -D '/var/lib/postgres/data'
 ```
 
 最后一步也可用 pg_ctl 命令：
