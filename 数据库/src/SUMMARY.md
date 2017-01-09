@@ -5,6 +5,8 @@
     - [用户、组](./postgresql/user-group.md)
     - [数据库模板](./postgresql/template.md)
 	- [Idle in transaction](./postgresql/idle-in-transaction.md)
+	- [postgres-fdw](./postgresql/postgres-fdw.md)
+	- [pg_stat_statements](./postgresql/pg_stat_statements.md)
 - [mysql](./mysql/index.md)
     - [安装](./mysql/install.md)
     - [用户、组](./mysql/user-group.md)
