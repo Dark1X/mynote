@@ -136,6 +136,45 @@ postgres 的端口默认为 `5432`，如果在远程服务器开启了 postgres 
 psql -h localhost -p 15432 -U user dbname
 ```
 
+本地的 config 文件配置如下：
+
+```
+Host postgres-tunnel
+    Hostname        ssh_host
+    Port            22
+    User            user
+    Identityfile    ~/.ssh/id_rsa
+    LocalForward    15432 localhost:5432
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+```
+
+可以利用 autossh 自动监控 ssh 链接，如果链接断开再自动重启:
+
+```
+autossh -M 0 -fTN postgres-tunnel
+```
+
+可以设置 systemd service 文件开机自启动：
+
+```
+[Unit]
+Description=AutoSSH tunnel service for postgres
+After=network.target
+
+[Service]
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh \
+    -M 0 \
+	-o "ServerAliveInterval 30" \
+	-o "ServerAliveCountMax 3" \
+	-NL 15432:localhost:5432 \
+	user@ssh_host
+
+[Install]
+WantedBy=multi-user.target
+```
+
 
 ### 远程端口转发
 
